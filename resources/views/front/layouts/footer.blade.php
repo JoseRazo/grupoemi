@@ -34,8 +34,8 @@
                     <div class="block-23 mb-3">
                         <ul>
                             <li><span class="fa fa-map-marker mr-3"></span><span class="text">Salamanca, Gto, México.</span></li>
-                            <li><a href="#"><span class="fa fa-phone mr-3"></span><span class="text">464 642 0517</span></a></li>
-                            <li><a href="#"><span class="fa fa-mobile mr-3"></span><span class="text">464 132 2235</span></a></li>
+                            <li><a href="tel:4641010877"><span class="fa fa-phone mr-3"></span><span class="text">464 101 0877</span></a></li>
+                            <li><a href="https://wa.me/524621010582" target="_blank"><span class="fa fa-whatsapp mr-3"></span><span class="text">462 101 0582</span></a></li>
                             <li><a href="mailto:contacto@industrialgremi.com"><span class="fa fa-paper-plane mr-3"></span><span
                                         class="text">contacto@industrialgremi.com</span></a></li>
                         </ul>

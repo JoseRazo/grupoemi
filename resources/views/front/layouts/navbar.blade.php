@@ -12,7 +12,7 @@
                 <li class="nav-item"><a href="#" class="nav-link">Proyectos</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
             </ul>
-            <a href="#" class="btn-custom" data-toggle="modal" data-target="#modalQuote">Consultar Ahora</a>
+            <a href="#" class="btn-custom" data-toggle="modal" data-target="#modalQuote">Solicitar Presupuesto</a>
         </div>
     </div>
 </nav>
