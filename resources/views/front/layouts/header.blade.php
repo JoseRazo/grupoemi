@@ -29,9 +29,10 @@
             </div>
             <div class="col-sm-12 col-md-4 d-flex topper align-items-center text-lg-right justify-content-end">
                 <p class="mb-0 register-link d-flex align-items-center justify-content-center">
-                    <a href="https://wa.me/524621010582" target="_blank" class="btn btn-success d-flex align-items-center">
+                    <a href="https://wa.me/524621010582" target="_blank"
+                        class="btn btn-success d-flex align-items-center justify-content-center w-100">
                         <i class="fa fa-whatsapp" style="font-size: 1.5em;"></i>
-                        <span class="ml-2">462 101 0582</span>
+                        <span class="ml-2 text-center">462 101 0582</span>
                     </a>
                 </p>
             </div>
