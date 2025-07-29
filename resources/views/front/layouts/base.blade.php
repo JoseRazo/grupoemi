@@ -8,12 +8,10 @@
     <title>Grupo EMI - @yield('title')</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/logo-gremi.jpeg') }}">
 
     <meta content="Grupo EMI" name="keywords">
     <meta content="Grupo EMI" name="description">
-
-    {{-- @vite(['resources/js/app.js', 'resources/css/app.css']) --}}
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
@@ -30,6 +28,8 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+    @vite(['resources/js/app.js'])
 
     @stack('styles')
 

@@ -8,7 +8,7 @@
     <title>Grupo EMI - Iniciar Sesión</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/logo-gremi.jpeg') }}">
 
     <meta content="Grupo EMI" name="keywords">
     <meta content="Grupo EMI" name="description">

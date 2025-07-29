@@ -6,13 +6,12 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">¿Quiénes somos?</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Servicios</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Proyectos</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
+                <li class="nav-item {{ request()->routeIS('home') ? 'active' : '' }}"><a href="{{ route('home') }}" class="nav-link">Home</a></li>
+                <li class="nav-item {{ request()->routeIS('about') ? 'active' : '' }}"><a href="{{ route('about') }}" class="nav-link">¿Quiénes somos?</a></li>
+                <li class="nav-item {{ request()->routeIS('services') ? 'active' : '' }}"><a href="{{ route('services') }}" class="nav-link">Servicios</a></li>
+                <li class="nav-item {{ request()->routeIS('projects') ? 'active' : '' }}"><a href="{{ route('projects') }}" class="nav-link">Trabajos Realizados</a></li>
             </ul>
-            <a href="#" class="btn-custom" data-toggle="modal" data-target="#modalQuote">Solicitar Presupuesto</a>
+            <a href="{{ route('contact') }}" class="btn-custom" style="{{ request()->routeIS('contact') ? 'background: #fc5e28;' : '' }}">Contáctanos</a>
         </div>
     </div>
 </nav>

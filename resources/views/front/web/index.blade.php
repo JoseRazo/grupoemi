@@ -4,5 +4,5 @@
 
 @section('content')
     @include('front.layouts.hero')
-    @include('front.sections.about')
+    @include('front.components.about-component')
 @endsection

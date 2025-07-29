@@ -19,10 +19,10 @@
                     <h2 class="ftco-heading-2">Enlaces</h2>
                     <div class="d-flex">
                         <ul class="list-unstyled mr-md-4">
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>¿Quiénes somos?</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Proyectos</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Servicios</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contacto</a></li>
+                            <li><a href="{{ route('about') }}"><span class="fa fa-chevron-right mr-2"></span>¿Quiénes somos?</a></li>
+                            <li><a href="{{ route('projects') }}"><span class="fa fa-chevron-right mr-2"></span>Proyectos</a></li>
+                            <li><a href="{{ route('services') }}"><span class="fa fa-chevron-right mr-2"></span>Servicios</a></li>
+                            <li><a href="{{ route('contact') }}"><span class="fa fa-chevron-right mr-2"></span>Contacto</a></li>
                         </ul>
                     </div>
                 </div>
