@@ -5,4 +5,5 @@
 @section('content')
     @include('front.layouts.hero')
     @include('front.components.about-component')
+    @include('front.components.services-component')
 @endsection

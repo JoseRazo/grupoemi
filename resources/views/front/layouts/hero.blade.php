@@ -10,9 +10,8 @@
                         de
                         calidad en
                         la industria de la construcción.</p>
-                    <p><a href="#" class="btn btn-primary">Nuestros Servicios</a> <a href="#"
-                            class="btn btn-white" data-toggle="modal" data-target="#modalQuote">Solicitar
-                            Presupuesto</a></p>
+                    <p><a href="{{ route('services') }}" class="btn btn-primary">Nuestros Servicios</a> <a href="{{ route('projects') }}"
+                            class="btn btn-white">Trabajos Realizados</a></p>
                 </div>
             </div>
         </div>
