@@ -52,7 +52,7 @@
                             @enderror
                         </div>
 
-                        <div class="mb-3">
+                        <div class="mb-3" wire:ignore>
                             <label for="service_category_id" class="form-label">Categoría</label>
                             <select id="service_category_id" class="form-select" wire:model="service_category_id">
                                 <option value="">Seleccione una categoría</option>
