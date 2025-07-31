@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ServicePhoto;
 use App\Models\ServiceCategory;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -16,18 +17,22 @@ class ProjectController extends Controller
      */
     public function projects(Request $request)
     {
-        $selectedCategoryId = $request->get('category_id');
+        return view('front.web.articles.projects.projects');
+    }
 
-        // Obtener solo categorías con al menos una imagen
-        $categories = ServiceCategory::whereHas('photos')->get();
+    /**
+     * Display projects by category.
+     *
+     * @param string $slug
+     * @return \Illuminate\View\View
+     */
+    public function projectsByCategory($slug)
+    {
+        $category = ServiceCategory::whereHas('photos')->get()
+            ->first(fn($cat) => Str::slug($cat->name) === $slug);
 
-        // Obtener imágenes con su categoría (para el grid de fotos)
-        $projects = ServicePhoto::with('category')
-            ->when($selectedCategoryId, function ($query) use ($selectedCategoryId) {
-                $query->where('service_category_id', $selectedCategoryId);
-            })
-            ->get();
+        abort_unless($category, 404);
 
-        return view('front.web.articles.projects.projects', compact('projects', 'categories', 'selectedCategoryId'));
+        return view('front.web.articles.projects.projects-by-category', compact('category', 'slug'));
     }
 }

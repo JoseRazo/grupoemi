@@ -11,6 +11,7 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/quienes-somos', [AboutController::class, 'about'])->name('about');
 Route::get('/servicios', [ServiceController::class, 'services'])->name('services');
 Route::get('/proyectos', [ProjectController::class, 'projects'])->name('projects');
+Route::get('/proyectos/{slug}', [ProjectController::class, 'projectsByCategory'])->name('projects.by.category');
 Route::get('/contacto', [ContactController::class, 'contact'])->name('contact');
 Route::post('/contacto', [ContactController::class, 'submit'])->name('contact.submit');
 

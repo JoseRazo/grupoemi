@@ -9,7 +9,7 @@
                 <li class="nav-item {{ request()->routeIS('home') ? 'active' : '' }}"><a href="{{ route('home') }}" class="nav-link">Home</a></li>
                 <li class="nav-item {{ request()->routeIS('about') ? 'active' : '' }}"><a href="{{ route('about') }}" class="nav-link">¿Quiénes somos?</a></li>
                 <li class="nav-item {{ request()->routeIS('services') ? 'active' : '' }}"><a href="{{ route('services') }}" class="nav-link">Servicios</a></li>
-                <li class="nav-item {{ request()->routeIS('projects') ? 'active' : '' }}"><a href="{{ route('projects') }}" class="nav-link">Trabajos Realizados</a></li>
+                <li class="nav-item {{ request()->routeIs('projects', 'projects.by.category') ? 'active' : '' }}"><a href="{{ route('projects') }}" class="nav-link">Trabajos Realizados</a></li>
             </ul>
             <a href="{{ route('contact') }}" class="btn-custom" style="{{ request()->routeIS('contact') ? 'background: #fc5e28;' : '' }}">Contáctanos</a>
         </div>

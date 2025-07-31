@@ -4,39 +4,50 @@ namespace App\Livewire\Front;
 
 use Livewire\Component;
 use Livewire\WithPagination;
-use App\Models\ServicePhoto;
 use App\Models\ServiceCategory;
+use App\Models\ServicePhoto;
+use Illuminate\Support\Str;
 
 class ProjectsInfiniteScroll extends Component
 {
     use WithPagination;
 
-    public $selectedCategoryId = null;
-    public $perPage = 12;
+    public $slug;
+    public $categoryId;
+    public $perPage = 9;
 
-    protected $queryString = ['selectedCategoryId' => ['except' => '']];
+    protected $queryString = ['page'];
+
+    public function mount($slug)
+    {
+        $this->slug = $slug;
+
+        $category = ServiceCategory::whereHas('photos')->get()
+            ->first(fn($cat) => Str::slug($cat->name) === $this->slug);
+
+        abort_unless($category, 404);
+
+        $this->categoryId = $category->id;
+    }
 
     public function loadMore()
     {
-        $this->perPage += 12;
+        $this->perPage += 9;
     }
 
-    public function updatedSelectedCategoryId()
+    public function updatingSlug()
     {
         $this->resetPage();
-        $this->perPage = 9;
     }
 
     public function render()
     {
-        $categories = ServiceCategory::whereHas('photos')->get();
-
-        $projects = ServicePhoto::with('category')
-            ->when($this->selectedCategoryId, function ($query) {
-                $query->where('service_category_id', $this->selectedCategoryId);
-            })
+        $projects = ServicePhoto::where('service_category_id', $this->categoryId)
+            ->latest('id')
             ->paginate($this->perPage);
 
-        return view('livewire.front.projects-infinite-scroll', compact('projects', 'categories'));
+        return view('livewire.front.projects-infinite-scroll', [
+            'projects' => $projects,
+        ]);
     }
 }

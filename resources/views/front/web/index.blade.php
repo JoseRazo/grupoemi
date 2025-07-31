@@ -5,5 +5,6 @@
 @section('content')
     @include('front.layouts.hero')
     @include('front.components.about-component')
+    <livewire:front.projects-component />
     @include('front.components.services-component')
 @endsection
