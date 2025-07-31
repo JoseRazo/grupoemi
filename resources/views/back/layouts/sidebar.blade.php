@@ -60,6 +60,12 @@
                         <p>Fotos</p>
                     </a>
                 </li>
+                <li class="nav-item {{ request()->routeIs('admin.portfolio.customers.*') ? 'active submenu' : '' }}">
+                    <a href="{{ route('admin.portfolio.customers.index') }}">
+                        <i class="fas fa-building"></i>
+                        <p>Clientes</p>
+                    </a>
+                </li>
                 {{-- End Portfolio --}}
                 {{-- System --}}
                 @role('super-admin|admin')

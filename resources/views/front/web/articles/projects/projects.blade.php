@@ -19,4 +19,5 @@
         </div>
     </section>
     <livewire:front.projects-component />
+    <livewire:front.customer-carousel-component />
 @endsection

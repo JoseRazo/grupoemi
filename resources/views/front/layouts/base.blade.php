@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
 
@@ -66,6 +67,7 @@
     <script src="{{ asset('assets/js/bootstrap-datepicker.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.timepicker.min.js') }}"></script>
     <script src="{{ asset('assets/js/scrollax.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     {{-- <script src="{{ asset('assets/js/google-map.js') }}"></script> --}}
 
     <script src="{{ asset('assets/js/main.js') }}"></script>

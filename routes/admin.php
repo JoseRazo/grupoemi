@@ -5,6 +5,7 @@ use App\Http\Controllers\Back\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Back\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Back\Auth\NewPasswordController;
 use App\Http\Controllers\Back\DashboardController;
+use App\Livewire\Admin\Portfolio\CustomersComponent;
 use App\Livewire\Admin\Portfolio\ServiceCategoryComponent;
 use App\Livewire\Admin\Portfolio\ServicePhotoComponent;
 use App\Livewire\Admin\Portfolio\ServicePhotoCreateComponent;
@@ -67,6 +68,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
                     ->name('edit')
                     ->middleware(['permission:update-service-photos']);
             });
+
+            // Clientes
+            Route::get('clientes', CustomersComponent::class)
+                ->name('customers.index')
+                ->middleware(['permission:read-customers']);
         });
     });
 });

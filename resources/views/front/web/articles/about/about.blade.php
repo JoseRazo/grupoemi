@@ -19,4 +19,5 @@
         </div>
     </section>
     @include('front.components.about-component')
+    <livewire:front.customer-carousel-component />
 @endsection
