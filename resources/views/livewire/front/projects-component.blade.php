@@ -14,7 +14,7 @@
                         $slug = Str::slug($category->name);
                     @endphp
                     @if ($firstPhoto)
-                        <div class="col-lg-4 d-flex align-items-stretch ftco-animate fadeInUp ftco-animated">
+                        <div class="col-lg-4 d-flex align-items-stretch ftco-animate fadeInUp ftco-animated mb-5">
                             <div class="blog-entry h-100 d-flex flex-column">
                                 <a href="{{ route('projects.by.category', ['slug' => $slug]) }}" class="block-20"
                                     style="background-image: url('{{ asset('storage/' . $firstPhoto->path) }}'); height: 250px;">
