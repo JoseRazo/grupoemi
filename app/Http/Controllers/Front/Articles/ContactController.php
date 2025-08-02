@@ -26,7 +26,7 @@ class ContactController extends Controller
 
         try {
             // Send email
-            Mail::to('contacto@industrialgremi.com')->send(new ContactMail($validated));
+            Mail::to('industrialgrupo.emi@gmail.com')->send(new ContactMail($validated));
 
             return back()->with('message', '¡Gracias por contactarnos! Tu mensaje ha sido enviado correctamente. Nos pondremos en contacto contigo lo antes posible.');
         } catch (\Exception $e) {
