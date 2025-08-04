@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Providers;
+
 use App\Models\Setting;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Schema;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -21,10 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-    // Cargar la configuración una sola vez
-    $settings = Setting::first();
-
-    // Compartir con todas las vistas
-    View::share('siteSettings', $settings);
+        if (Schema::hasTable('settings')) {
+            $settings = Setting::first();
+            View::share('siteSettings', $settings);
+        }
     }
 }
