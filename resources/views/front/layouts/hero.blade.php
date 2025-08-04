@@ -6,12 +6,9 @@
             <div class="col-lg-6 ftco-animate">
                 <div class="mt-5">
                     <h1 class="mb-4">Construimos <br>Grandes Proyectos</h1>
-                    <p class="mb-4">Grupo EMI es una empresa joven, innovadora y comprometida con brindar un servicio
-                        de
-                        calidad en
-                        la industria de la construcción.</p>
-                    <p><a href="{{ route('services') }}" class="btn btn-primary">Nuestros Servicios</a> <a href="{{ route('projects') }}"
-                            class="btn btn-white">Trabajos Realizados</a></p>
+                    <p class="mb-4">{{ $siteSettings->about_us }}</p>
+                    <p><a href="{{ route('services') }}" class="btn btn-primary">Nuestros Servicios</a> <a
+                            href="{{ route('projects') }}" class="btn btn-white">Trabajos Realizados</a></p>
                 </div>
             </div>
         </div>
@@ -54,4 +51,3 @@
         </div>
     </div>
 </section>
-

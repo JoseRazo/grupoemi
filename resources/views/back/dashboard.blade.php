@@ -12,7 +12,7 @@
             <div class="card-body text-center">
                 <h4 class="mb-2">Bienvenido</h4>
                 <h5 class="fw-bold">{{ Auth::user()->name }}</h5>
-                <img src="{{ asset('assets/images/logo-gremi.jpeg') }}" alt="Bienvenido" style="max-width: 280px;"
+                <img src="{{ asset('storage/' . $siteSettings->logo_url) }}" alt="Bienvenido" style="max-width: 280px;"
                     class="mt-4">
             </div>
         </div>

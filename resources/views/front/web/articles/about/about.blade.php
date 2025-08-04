@@ -13,7 +13,7 @@
                     <p class="breadcrumbs"><span class="mr-2"><a href="{{ route('home') }}">Home <i
                                     class="fa fa-chevron-right"></i></a></span> <span>¿Quiénes somos? <i
                                 class="fa fa-chevron-right"></i></span></p>
-                    <h1 class="mb-3 bread">Acerca de Grupo EMI</h1>
+                    <h1 class="mb-3 bread">Acerca de {{ $siteSettings->company_name }}</h1>
                 </div>
             </div>
         </div>

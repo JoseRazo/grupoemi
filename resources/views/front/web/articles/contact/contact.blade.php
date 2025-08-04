@@ -89,7 +89,7 @@
                                 <span class="fa fa-map-marker"></span>
                             </div>
                             <div class="text">
-                                <p><span>Dirección:</span> Salamanca, Gto, México.</p>
+                                <p><span>Dirección:</span> {{ $siteSettings->address }}</p>
                             </div>
                         </div>
                         <div class="dbox w-100 d-flex ftco-animate fadeInUp ftco-animated">
@@ -97,7 +97,7 @@
                                 <span class="fa fa-phone"></span>
                             </div>
                             <div class="text">
-                                <p><span>Teléfono:</span> <a href="tel://464 101 0877">464 101 0877</a></p>
+                                <p><span>Teléfono:</span> <a href="{{ phone_href($siteSettings->phone) }}">{{ format_phone($siteSettings->phone) }}</a></p>
                             </div>
                         </div>
                         <div class="dbox w-100 d-flex ftco-animate fadeInUp ftco-animated">
@@ -105,7 +105,7 @@
                                 <span class="fa fa-whatsapp"></span>
                             </div>
                             <div class="text">
-                                <p><span>WhatsApp:</span> <a href="https://wa.me/524621010582" target="_blank">462 101 0582</a></p>
+                                <p><span>WhatsApp:</span> <a href="{{ whatsapp_href($siteSettings->whatsapp) }}" target="_blank">{{ format_phone($siteSettings->whatsapp) }}</a></p>
                             </div>
                         </div>
                         <div class="dbox w-100 d-flex ftco-animate fadeInUp ftco-animated">
@@ -113,7 +113,7 @@
                                 <span class="fa fa-paper-plane"></span>
                             </div>
                             <div class="text">
-                                <p><span>Correo:</span> <a href="mailto:contacto@industrialgremi.com">contacto@industrialgremi.com</a></p>
+                                <p><span>Correo:</span> <a href="mailto:{{ $siteSettings->email }}">{{ $siteSettings->email }}</a></p>
                             </div>
                         </div>
                     </div>

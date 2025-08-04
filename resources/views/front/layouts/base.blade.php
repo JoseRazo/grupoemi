@@ -5,13 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Grupo EMI - @yield('title')</title>
+    <title>{{ $siteSettings->company_name }} - @yield('title')</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('assets/images/logo-gremi.jpeg') }}">
+    <link rel="icon" type="image/png" href="{{ asset('storage/' . $siteSettings->logo_url) }}">
 
-    <meta content="Grupo EMI" name="keywords">
-    <meta content="Grupo EMI" name="description">
+
+    <meta content="{{ $siteSettings->company_name }}" name="keywords">
+    <meta content="{{ $siteSettings->company_name }}" name="description">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 

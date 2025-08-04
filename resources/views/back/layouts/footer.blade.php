@@ -5,7 +5,7 @@
                 document.write(new Date().getFullYear());
             </script>
             <i class="fa fa-web heart text-danger"></i> Todos los derechos reservados
-            <a href="{{ route('home') }}" target="_blank">Grupo EMI.</a>
+            <a href="{{ route('home') }}" target="_blank">{{ $siteSettings->company_name }}.</a>
         </div>
         <div>
             Desarrollado por <a href="https://joserazo.github.io/cv/" target="_blank">José Razo</a>.

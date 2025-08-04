@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Grupo EMI - Iniciar Sesión</title>
+    <title>{{ $siteSettings->company_name }} - Iniciar Sesión</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('assets/images/logo-gremi.jpeg') }}">
+    <link rel="icon" type="image/png" href="{{ asset('storage/' . $siteSettings->logo_url) }}">
 
-    <meta content="Grupo EMI" name="keywords">
-    <meta content="Grupo EMI" name="description">
+    <meta content="{{ $siteSettings->company_name }}" name="keywords">
+    <meta content="{{ $siteSettings->company_name }}" name="description">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -74,7 +74,7 @@
             @csrf
 
             <div class="text-center mb-4">
-                <img src="{{ asset('assets/images/logo-gremi.jpeg') }}" alt="Logo" class="img-fluid"
+                <img src="{{ asset('storage/' . $siteSettings->logo_url) }}" alt="Logo" class="img-fluid"
                     style="max-width: 150px;">
             </div>
 

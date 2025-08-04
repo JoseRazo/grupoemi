@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Nuevo Mensaje de Contacto - Grupo EMI</title>
+    <title>Nuevo Mensaje de Contacto - {{ $siteSettings->company_name }}</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -106,7 +106,7 @@
             </a>
         </div>
         <div class="footer">
-            <p>Este mensaje fue enviado automáticamente desde el formulario de contacto de Grupo EMI.</p>
+            <p>Este mensaje fue enviado automáticamente desde el formulario de contacto de {{ $siteSettings->company_name }}.</p>
         </div>
     </div>
 </body>

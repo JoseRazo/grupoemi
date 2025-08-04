@@ -7,9 +7,9 @@
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="dark">
             <a href="{{ route('admin.dashboard') }}" class="logo">
-                <img src="{{ asset('assets/images/logo-gremi.jpeg') }}" alt="navbar brand" class="navbar-brand"
+                <img src="{{ asset('storage/' . $siteSettings->logo_url) }}" alt="navbar brand" class="navbar-brand"
                     width="30" />
-                <span class="text text-white fw-bolder ms-2">Grupo EMI</span>
+                <span class="text text-white fw-bolder ms-2">{{ $siteSettings->company_name }}</span>
             </a>
             <div class="nav-toggle">
                 <button class="btn btn-toggle toggle-sidebar">
@@ -48,13 +48,15 @@
                         <p>Servicios</p>
                     </a>
                 </li>
-                <li class="nav-item {{ request()->routeIs('admin.portfolio.service-categories.*') ? 'active submenu' : '' }}">
+                <li
+                    class="nav-item {{ request()->routeIs('admin.portfolio.service-categories.*') ? 'active submenu' : '' }}">
                     <a href="{{ route('admin.portfolio.service-categories.index') }}">
                         <i class="fas fa-clipboard-list"></i>
                         <p>Categorias</p>
                     </a>
                 </li>
-                <li class="nav-item {{ request()->routeIs('admin.portfolio.service-photos.*') ? 'active submenu' : '' }}">
+                <li
+                    class="nav-item {{ request()->routeIs('admin.portfolio.service-photos.*') ? 'active submenu' : '' }}">
                     <a href="{{ route('admin.portfolio.service-photos.index') }}">
                         <i class="fas fa-images"></i>
                         <p>Fotos</p>
@@ -107,6 +109,13 @@
                                 @endpermission
                             </ul>
                         </div>
+                    </li>
+                    {{-- Setings --}}
+                    <li class="nav-item {{ request()->routeIs('admin.system.settings.index') ? 'active submenu' : '' }}">
+                        <a href="{{ route('admin.system.settings.index') }}">
+                            <i class="fas fa-wrench"></i>
+                            <p>Ajustes Generales</p>
+                        </a>
                     </li>
                 @endrole
                 {{-- End System --}}

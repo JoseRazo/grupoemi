@@ -38,6 +38,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
                     ->middleware(['permission:read-permissions']);
 
             });
+
+            // Settings
+            Route::get('ajustes', \App\Livewire\Admin\System\Settings\SettingsComponent::class)
+                ->name('settings.index')
+                ->middleware(['permission:manage-settings']);
         });
     });
 });

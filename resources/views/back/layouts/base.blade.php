@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Grupo EMI - Panel de Administración</title>
+    <title>{{ $siteSettings->company_name }} - Panel de Administración</title>
 
-    <meta content="Grupo EMI" name="keywords" />
-    <meta content="Grupo EMI" name="description" />
+    <meta content="{{ $siteSettings->company_name }}" name="keywords" />
+    <meta content="{{ $siteSettings->company_name }}" name="description" />
 
-    <link rel="icon" type="image/png" href="{{ asset('assets/images/logo-gremi.jpeg') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('storage/' . $siteSettings->logo_url) }}" />
 
     <!-- Fonts and icons -->
     <script src="{{ asset('assets/admin/assets/js/plugin/webfont/webfont.min.js') }}"></script>
