@@ -16,6 +16,8 @@ class SettingsComponent extends Component
     public $facebook, $instagram, $twitter, $linkedin, $youtube, $tiktok;
     public $logo_url;
     public $logo_file;
+    public $about_us_image;
+    public $about_us_image_file;
 
     public $setting_id;
 
@@ -45,6 +47,7 @@ class SettingsComponent extends Component
             'address' => 'nullable|string',
             'google_maps_link' => 'nullable|url',
             'logo_file' => 'nullable|image|max:2048',
+            'about_us_image_file' => 'nullable|image|max:6144',
         ]);
 
         // Si se cargó un nuevo logo
@@ -56,6 +59,17 @@ class SettingsComponent extends Component
 
             // Subir el nuevo logo y guardar la ruta
             $this->logo_url = $this->logo_file->store('logos', 'public');
+        }
+
+        // Si se cargó una nueva imagen de "Sobre nosotros"
+        if ($this->about_us_image_file) {
+            // Eliminar la imagen anterior si existe
+            if ($this->about_us_image && \Storage::disk('public')->exists($this->about_us_image)) {
+                \Storage::disk('public')->delete($this->about_us_image);
+            }
+
+            // Subir la nueva imagen y guardar la ruta
+            $this->about_us_image = $this->about_us_image_file->store('about_us', 'public');
         }
 
         Setting::updateOrCreate(
@@ -76,7 +90,8 @@ class SettingsComponent extends Component
                 'linkedin',
                 'youtube',
                 'tiktok',
-                'logo_url'
+                'logo_url',
+                'about_us_image',
             ])
         );
 

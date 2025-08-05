@@ -1,14 +1,14 @@
 <div>
     @push('styles')
         <style>
-            .swiper-slide {
+            .swiper-slide-customers {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 height: 220px;
             }
 
-            .swiper-slide img {
+            .swiper-slide-customers img {
                 max-height: 90px;
                 max-width: 100%;
                 object-fit: contain;
@@ -21,14 +21,14 @@
         <div class="">
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-8 text-center heading-section ftco-animate fadeInUp ftco-animated">
-                    <h2 class="mb-4">Nuestros Clientes</h2>
+                    <h2 class="mb-4">Nuestros Colaboradores</h2>
                 </div>
             </div>
 
             <div class="swiper mySwiper bg-white" style="margin: 0 15px">
                 <div class="swiper-wrapper">
                     @foreach ($customers->chunk(2) as $pair)
-                        <div class="swiper-slide">
+                        <div class="swiper-slide swiper-slide-customers">
                             <div class="d-flex flex-column align-items-center gap-3">
                                 @foreach ($pair as $customer)
                                     <img src="{{ asset('storage/' . $customer->logo) }}" alt="{{ $customer->name }}">

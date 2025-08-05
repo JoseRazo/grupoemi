@@ -74,5 +74,18 @@ Route::prefix('admin')->name('admin.')->group(function () {
                 ->name('customers.index')
                 ->middleware(['permission:read-customers']);
         });
+
+        // Components Routes
+        Route::prefix('componentes')->middleware(['role:super-admin|admin'])->name('components.')->group(function () {
+            // Sliders
+            Route::get('sliders', \App\Livewire\Admin\Components\Slider\SlidersComponent::class)
+                ->name('sliders.index')
+                ->middleware(['permission:read-sliders']);
+
+            // Slider Categories
+            Route::get('slider-categorias', \App\Livewire\Admin\Components\Slider\SliderCategoriesComponent::class)
+                ->name('slider-categories.index')
+                ->middleware(['permission:read-slider-categories']);
+        });
     });
 });

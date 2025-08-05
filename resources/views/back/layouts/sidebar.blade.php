@@ -69,6 +69,31 @@
                     </a>
                 </li>
                 {{-- End Portfolio --}}
+
+                {{-- Componets --}}
+                <li class="nav-section">
+                    <span class="sidebar-mini-icon">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </span>
+                    <h4 class="text-section">Componentes</h4>
+                </li>
+                @permission('read-sliders')
+                <li class="nav-item {{ request()->routeIs('admin.components.sliders-index') ? 'active' : '' }}">
+                    <a href="{{ route('admin.components.sliders.index') }}">
+                        <i class="fas fa-images"></i>
+                        <p>Sliders</p>
+                    </a>
+                </li>
+                @endpermission
+                @permission('read-slider-categories')
+                <li class="nav-item {{ request()->routeIs('admin.components.slider-categories-index') ? 'active' : '' }}">
+                    <a href="{{ route('admin.components.slider-categories.index') }}">
+                        <i class="fas fa-list"></i>
+                        <p>Categorías de Slider</p>
+                    </a>
+                </li>
+                @endpermission
+
                 {{-- System --}}
                 @role('super-admin|admin')
                     <li class="nav-section">
@@ -77,6 +102,7 @@
                         </span>
                         <h4 class="text-section">Sistema</h4>
                     </li>
+                    {{-- Auth --}}
                     <li class="nav-item {{ $isAuthRoute ? 'active submenu' : '' }}">
                         <a data-bs-toggle="collapse" href="#auth">
                             <i class="fas fa-lock"></i>
@@ -110,13 +136,17 @@
                             </ul>
                         </div>
                     </li>
+                    {{-- End Auth --}}
                     {{-- Setings --}}
+                    @permission('manage-settings')
                     <li class="nav-item {{ request()->routeIs('admin.system.settings.index') ? 'active submenu' : '' }}">
                         <a href="{{ route('admin.system.settings.index') }}">
                             <i class="fas fa-wrench"></i>
                             <p>Ajustes Generales</p>
                         </a>
                     </li>
+                    @endpermission
+                    {{-- End Settings --}}
                 @endrole
                 {{-- End System --}}
             </ul>

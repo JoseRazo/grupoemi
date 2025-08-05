@@ -12,6 +12,7 @@ class Setting extends Model
         // Información general
         'company_name',
         'about_us',
+        'about_us_image',
         'mission',
         'vision',
 

@@ -58,9 +58,17 @@
                             </li>
                             <li>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ route('admin.system.auth.users.index') }}">Usuarios</a>
-                                <a class="dropdown-item" href="{{ route('admin.system.auth.roles.index') }}">Roles</a>
-                                <a class="dropdown-item" href="{{ route('admin.system.auth.permissions.index') }}">Permisos</a>
+                                @permission('read-users')
+                                    <a class="dropdown-item"
+                                        href="{{ route('admin.system.auth.users.index') }}">Usuarios</a>
+                                @endpermission
+                                @permission('read-roles')
+                                    <a class="dropdown-item" href="{{ route('admin.system.auth.roles.index') }}">Roles</a>
+                                @endpermission
+                                @permission('read-permissions')
+                                    <a class="dropdown-item"
+                                        href="{{ route('admin.system.auth.permissions.index') }}">Permisos</a>
+                                @endpermission
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('admin.logout') }}"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar

@@ -32,8 +32,10 @@
 
                         @if ($logo_url)
                             <div>
-                                <img src="{{ Storage::url($logo_url) }}" alt="Logo" class="img-fluid rounded border"
-                                    style="max-height: 40px;">
+                                <a href="{{ Storage::url($logo_url) }}" target="_blank">
+                                    <img src="{{ Storage::url($logo_url) }}" alt="Logo"
+                                        class="img-fluid rounded border" style="max-height: 40px;">
+                                </a>
                             </div>
                         @endif
                     </div>
@@ -44,9 +46,29 @@
                 </div>
 
 
-                <div class="col-12 mb-3">
+                <div class="col-md-6 mb-3">
                     <label>Sobre nosotros</label>
                     <textarea class="form-control" rows="3" wire:model="about_us"></textarea>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Imagen Sobre Nosotros</label>
+                    <div class="d-flex align-items-center gap-3">
+                        <input type="file" class="form-control" wire:model="about_us_image_file"
+                            style="max-width: 70%;">
+
+                        @if ($about_us_image)
+                            <div>
+                                <a href="{{ Storage::url($about_us_image) }}" target="_blank">
+                                    <img src="{{ Storage::url($about_us_image) }}" alt="Sobre nosotros"
+                                        class="img-fluid rounded border" style="max-height: 40px;">
+                                </a>
+                            </div>
+                        @endif
+                    </div>
+
+                    @error('about_us_image_file')
+                        <span class="text-danger d-block mt-1">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="col-12 mb-3">
                     <label>Misión</label>

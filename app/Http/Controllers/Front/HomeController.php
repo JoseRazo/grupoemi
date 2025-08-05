@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Service;
 use App\Models\ServiceCategory;
 use App\Models\ServicePhoto;
+use App\Models\SliderCategory;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -29,6 +30,13 @@ class HomeController extends Controller
                 $query->where('service_category_id', $selectedCategoryId);
             })
             ->get();
-        return view('front.web.index', compact('services', 'categories', 'selectedCategoryId'));
+
+        $sliderCategory = SliderCategory::where('name', 'Slider Principal')->first();
+
+        $sliders = $sliderCategory
+            ? $sliderCategory->sliders()->where('is_active', true)->orderBy('order')->get()
+            : collect();
+
+        return view('front.web.index', compact('services', 'categories', 'selectedCategoryId', 'sliders'));
     }
 }
